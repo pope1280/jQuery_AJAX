@@ -5,10 +5,7 @@ $(document).ready(function(){
       type: "post",
       url:  "/color"
     }).done(function(response) {
-      var cell  = response.cell;
-      var color = response.color;
-      var box_to_color = $("#color_me").find("li:nth-child("+cell+")");
-      box_to_color.css("background-color", color);
+      $("#color_me").find("li:nth-child("+response.cell+")").css("background-color", response.color);
     });
   });
 });
